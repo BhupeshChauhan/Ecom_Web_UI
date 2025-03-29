@@ -1,0 +1,27 @@
+<svg
+      width='56'
+      height='57'
+      viewBox='0 0 56 57'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      >
+      <rect x='4' y='4.5' width='48' height='48' rx='24' fill='#F4EBFF' />
+      <rect
+        x='4'
+        y='4.5'
+        width='48'
+        height='48'
+        rx='24'
+        stroke='#F9F5FF'
+        strokeWidth='8'
+        fill='none'
+      />
+      <path
+        d='M29 19L19 31H28L27 39L37 27H28L29 19Z'
+        stroke='#6C4ADE'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        fill='none'
+      />
+    </svg>
