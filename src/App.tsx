@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="bg-bgcolor-light dark:bg-bgcolor-dark admin-typography">
-      <GoogleOAuthProvider clientId="154191125521-se91foak4vd9elnvvmprj7nssp8kvhh9.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId="969837305276-0o28k09k27lbumss8i5nrlvdv3v44rfs.apps.googleusercontent.com">
         <ToastContainer />
         <MainProvider>
           <JobFormProvider>

@@ -31,6 +31,7 @@ const AuthGard = (props: Props) => {
       </>
     );
   }
+  console.log(userData, "auth gard");
   if (props.type === "client") {
     const redirectTo = props.to ? props.to : "/sign-in";
     return isUserLoggedIn ? (

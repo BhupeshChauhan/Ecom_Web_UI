@@ -9,7 +9,7 @@ const Header = ({ title }) => {
       <div className="flex">
         <Link rel="noopener noreferrer" to="/jobs/create">
           <Button variant="solid" color="primary" className="text-sm p-2 py-1">
-            <Plus className="mr-2 w-4" /> Create Job
+            <Plus className="mr-2 w-4" /> Create App
           </Button>
         </Link>
       </div>

@@ -27,7 +27,7 @@ export default function SignUpPage() {
           email: res.email,
         });
       }}
-      logoUrl="/HireomaticLogo.png"
+      logoUrl="/DashflowLogo.png"
       varient="basic"
       continueUrl="https://hireomaticclient.pages.dev/"
       showSignOn={true}

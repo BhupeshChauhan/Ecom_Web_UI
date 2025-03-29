@@ -15,7 +15,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.SignUp}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.SignUp}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -51,7 +51,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.SignUpSSO}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.SignUpSSO}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -93,7 +93,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.Login}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.Login}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           body: JSON.stringify({ email: res.email, password: res.password }),
@@ -136,7 +136,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.LoginSSO}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.LoginSSO}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           body: JSON.stringify({ email: res.email }),
@@ -170,7 +170,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.UpdateUserData}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.UpdateUserData}`,
         {
           method: "PUT", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -208,7 +208,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.GetCompanyData}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.GetCompanyData}`,
         {
           method: "GET", // or 'POST', 'PUT', etc.
           headers: {
@@ -241,7 +241,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.GetCompanyLimit}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.GetCompanyLimit}`,
         {
           method: "GET", // or 'POST', 'PUT', etc.
           headers: {
@@ -271,7 +271,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.UpdateCompanyData}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.UpdateCompanyData}`,
         {
           method: "PUT", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -310,7 +310,7 @@ const AuthService = () => {
     formData.append("file", res.file);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.UploadProfileImage}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.UploadProfileImage}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           body: formData,
@@ -347,7 +347,7 @@ const AuthService = () => {
     formData.append("file", res.file);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.UploadLogo}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.UploadLogo}`,
         {
           method: "PUT", // or 'POST', 'PUT', etc.
           body: formData,
@@ -382,7 +382,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.VerifyEmail}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.VerifyEmail}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -410,7 +410,7 @@ const AuthService = () => {
   const SendInviteEmail = async (res) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.SendInviteEmail}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.SendInviteEmail}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -439,7 +439,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.ForgotPassword}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.ForgotPassword}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -469,7 +469,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.ResetPassword}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.ResetPassword}`,
         {
           method: "PUT", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -501,7 +501,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.ChangePassword}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.ChangePassword}`,
         {
           method: "PUT", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -537,7 +537,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.InviteUser}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.InviteUser}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -578,7 +578,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.DeleteProfileImage}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.DeleteProfileImage}`,
         {
           method: "DELETE", // or 'POST', 'PUT', etc.
           headers: {
@@ -612,7 +612,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.DeleteLogo}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.DeleteLogo}`,
         {
           method: "DELETE", // or 'POST', 'PUT', etc.
           headers: {
@@ -646,7 +646,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.LogOutUser}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.LogOutUser}`,
         {
           method: "POST", // or 'POST', 'PUT', etc.
           headers: {
@@ -677,7 +677,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.ToggleStatus}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.ToggleStatus}`,
         {
           method: "PUT", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -696,7 +696,7 @@ const AuthService = () => {
         throw new Error(data.message);
       }
       handleReload(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/auth/user-list?status=all`,
+        `${import.meta.env.VITE_API_BASE_URI}/auth/user-list?status=all`,
         token,
       );
       SuccessPopUp(data.message);
@@ -715,7 +715,7 @@ const AuthService = () => {
   async function handleActiveUser(id, handleReload) {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.ToggleStatus}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.ToggleStatus}`,
         {
           method: "PUT", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -734,7 +734,7 @@ const AuthService = () => {
         throw new Error(data.message);
       }
       handleReload(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/auth/user-list?status=all`,
+        `${import.meta.env.VITE_API_BASE_URI}/auth/user-list?status=all`,
         token,
       );
       SuccessPopUp(data.message);
@@ -754,7 +754,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.GetPlansDetails}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.GetPlansDetails}`,
         {
           method: "GET", // or 'POST', 'PUT', etc.
           headers: {
@@ -786,7 +786,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.GetActivePlanDetails}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.GetActivePlanDetails}`,
         {
           method: "GET", // or 'POST', 'PUT', etc.
           headers: {
@@ -818,7 +818,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.CreatePaymentIntent}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.CreatePaymentIntent}`,
         {
           method: "GET", // or 'POST', 'PUT', etc.
           headers: {
@@ -849,7 +849,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.CreatePaymentIntent}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.CreatePaymentIntent}`,
         {
           method: "PUT", // or 'POST', 'PUT', etc.
           body: JSON.stringify({
@@ -883,7 +883,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.CancelSubscription}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.CancelSubscription}`,
         {
           method: "PUT",
           body: JSON.stringify({
@@ -916,7 +916,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.CreatePaymentLink}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.CreatePaymentLink}`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -949,7 +949,7 @@ const AuthService = () => {
     setisLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.CreateCheckoutSession}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.CreateCheckoutSession}`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -985,7 +985,7 @@ const AuthService = () => {
     console.log(res);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_AUTH_BASE_URI}/${AuthApiRoutes.CreateCustomerPortalSession}`,
+        `${import.meta.env.VITE_API_BASE_URI}/${AuthApiRoutes.CreateCustomerPortalSession}`,
         {
           method: "POST",
           body: JSON.stringify({

@@ -14,6 +14,8 @@ import { DatagridProvider } from "@dashflowx/datagrid";
 import DashboardDataGrid from "../../../components/DataGrid/DashboardDataGrid";
 import AnalyticsService from "../../../Api/AnalyticsService";
 import { retrieveValue } from "../../../utils";
+import JobsDataGrid from "../../../components/Job/DataGrids/JobsDataGrid";
+import AppsDataGrid from "../../../components/DataGrid/AppsDataGrid";
 
 // we can comment out the params that we don't need
 export const DASHBOARD_ANALYTICS_PARAMS = {
@@ -35,20 +37,23 @@ const ClientDashboard: FC = () => {
   const { isLoading, data, DashboardAnalytics } = AnalyticsService();
   const userData = retrieveValue("userData");
 
-  useEffect(() => {
-    DashboardAnalytics(Object.values(DASHBOARD_ANALYTICS_PARAMS).join(","));
-  }, []);
+  // useEffect(() => {
+  //   DashboardAnalytics(Object.values(DASHBOARD_ANALYTICS_PARAMS).join(","));
+  // }, []);
   return (
     <div>
       {isLoading && <LoaderMask />}
 
-      <div className="w-[99%] h-[calc(100vh-50px)] px-2 relative bg-neutral-50 rounded-lg m-3 mr-6 overflow-y-auto">
+      <div className="h-[calc(100vh-50px)] px-2 relative bg-neutral-50 rounded-lg mx-4 overflow-y-auto">
         <Header title={userData.username} />
+        <DatagridProvider>
+              <AppsDataGrid />
+            </DatagridProvider>
 
-        <div className="h-[100%] mt-4 flex-col justify-start items-start gap-4 inline-flex">
+        {/* <div className="h-[100%] mt-4 flex-col justify-start items-start gap-4 inline-flex">
           <div className="self-stretch justify-start items-start gap-4 inline-flex">
             <div className="w-[70%] flex-col justify-start items-start gap-4 inline-flex">
-              {/* render Stat Cards */}
+              
               <div className="justify-start items-start gap-4 inline-flex w-[100%]">
                 {data &&
                   data.summary?.length &&
@@ -64,7 +69,7 @@ const ClientDashboard: FC = () => {
                   ))}
               </div>
 
-              {/* render Graph Cards */}
+              
               <div className="justify-start items-start gap-4 inline-flex w-[100%]">
                 {data?.graphData?.assessmentScoreDistribution && (
                   <BarChartCard
@@ -87,7 +92,7 @@ const ClientDashboard: FC = () => {
                 )}
               </div>
 
-              {/* render Active Jobs Table */}
+              
               {data?.activeJobs?.listData &&
                 data?.activeJobs?.listData.length && (
                   <>
@@ -126,7 +131,7 @@ const ClientDashboard: FC = () => {
               </div>
             )}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

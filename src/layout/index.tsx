@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import useLogoutListener from "../utils/useLogoutListener";
 import ClientLayout from "./ClientLayout";
+import DashboardLayout from "./DashboardLayout";
 import MiniLayout from "./Mini";
 import MiniClientLayout from "./MiniClientLayout";
 
@@ -15,6 +16,9 @@ const Layout = ({ type }: any) => {
   }
   if (type === "miniClient") {
     return <MiniClientLayout />;
+  }
+  if (type === "DashboardLayout") {
+    return <DashboardLayout />;
   }
 };
 

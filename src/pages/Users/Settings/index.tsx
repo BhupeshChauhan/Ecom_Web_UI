@@ -7,6 +7,8 @@ import { LoaderMask } from "../../../components/Loader";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "@dashflowx/core";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -22,6 +24,7 @@ const formSchema = z.object({
 });
 
 const ClientGeneralSettings = () => {
+  const navigate = useNavigate();
   const { openModal, setOpenModal, ModalComp } = useModal();
   const userData = retrieveValue("userData");
   const { isLoading, DeleteProfileImage, UploadProfileImage } = AuthService();
@@ -38,16 +41,25 @@ const ClientGeneralSettings = () => {
   return (
     <div>
       {isLoading && <LoaderMask />}
-      <div className="flex w-full h-full flex-col justify-center items-center bg-neutral-50">
-        <div className="self-stretch w-full h-[89px] bg-white px-6 pt-8 pb-7 border-b border-[#e3eaee] flex-col justify-start items-start gap-4 flex shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
-          <div className="self-stretch justify-between items-start inline-flex">
-            <div className="justify-center items-center gap-1 flex">
-              <div className="text-[#020c17] text-2xl font-medium font-['Golos Text']">
-                Profile
-              </div>
-            </div>
-          </div>
+      <div className="flex h-screen flex-col justify-center items-center bg-neutral-50 w-full">
+        <div className="flex justify-between pt-3 px-3 shadow-lg mb-2 bg-white w-full">
+          <div className="flex gap-3 items-center justify-center p-3">
+            <Link to="/dashboard">
+            <h4 className="mb-0 font-normal">Dashboard</h4>
+          </Link>
+          <>{">"}</>
+          <h3 className="mb-0">Settings</h3>
         </div>
+        <div className="flex gap-3 items-center ">
+          <Button
+            variant="ghost"
+            className="w-fit h-fit"
+            onClick={() => navigate(-1)}
+          >
+            Go Back
+          </Button>
+        </div>
+      </div>
         <GeneralSettingsForm form={form} setOpenModal={setOpenModal} />
       </div>
       <ModalComp

@@ -47,8 +47,8 @@ const config: Config = {
           8: "#E5E7EB",
         },
         primary: {
-          DEFAULT: "#FF622D",
-          light: "#FF622D",
+          DEFAULT: "#2561A2",
+          light: "#2561A2",
           dark: "#a3d1ff",
         },
         "blue-dark": "#1B44C8",

@@ -59,12 +59,12 @@ const BasicSignIn = ({
   };
   const Icon = icons[icon];
   return (
-    <div className="flex relative flex-wrap w-[calc(100vw-20px)] h-[calc(100vh-20px)] m-[10px]">
+    <div className="flex relative flex-wrap h-screen">
       <img
-        className="-z-1 absolute top-0 h-full w-full object-cover opacity-90 rounded-3xl"
+        className="-z-1 absolute top-0 h-full w-full object-cover opacity-90"
         src={previewImg}
       />
-      <div className="flex w-full h-[calc(100vh-20px)]  flex-col md:w-[40%] bg-white z-10 rounded-l-3xl">
+      <div className="flex w-full h-screen  flex-col md:w-[35%] bg-white z-10 rounded-r-3xl">
         <div className="w-[80%] ml-8 my-auto flex flex-col pt-8 md:px-6 md:pt-0">
           <a
             href="#"
@@ -191,13 +191,13 @@ const BasicSignIn = ({
           )}
         </div>
       </div>
-      <div className="pointer-events-none hidden h-screen select-none bg-black md:block ">
-        <div className="md:w-[60%]"></div>
-        <div className="absolute bottom-0 z-10 px-8 text-white opacity-100 md:w-[40%] m-10">
-          <p className="mb-8 text-3xl font-semibold leading-10">
+      <div className="pointer-events-none hidden  select-none bg-black md:block ">
+        <div className="md:w-[80%] w-full bg-black/20 "></div>
+        <div className="absolute bottom-0 z-10 flex flex-col justify-end px-8 text-white opacity-100 md:w-[65%] bg-black/20 h-full w-full">
+          <p className="mb-8 text-3xl font-semibold leading-10 text-white">
             {PreviewDescription}
           </p>
-          <p className="mb-7 text-sm opacity-70">{previewTitle}</p>
+          <p className="mb-7 text-sm opacity-70 text-white">{previewTitle}</p>
         </div>
       </div>
     </div>

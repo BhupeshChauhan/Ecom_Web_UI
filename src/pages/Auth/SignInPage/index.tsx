@@ -22,7 +22,7 @@ export default function SignInPage() {
       handleSignOn={(res) => {
         LoginApiSSO({ email: res.email });
       }}
-      logoUrl="/HireomaticLogo.png"
+      logoUrl="/DashflowLogo.png"
       varient="basic"
       showSignUp={true}
       showSignOn={true}

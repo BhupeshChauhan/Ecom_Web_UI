@@ -58,15 +58,6 @@ const VideoScreening = React.lazy(
   () => import("../pages/Applicant/Job/VideoScreening"),
 );
 const PreviewJob = React.lazy(() => import("../pages/Users/Job/PreviewJob"));
-const HmDashboard = React.lazy(
-  () => import("../pages/Users/Dashboard/HmDashboard"),
-);
-const HrmDashboard = React.lazy(
-  () => import("../pages/Users/Dashboard/HrmDashboard"),
-);
-const HrpDashboard = React.lazy(
-  () => import("../pages/Users/Dashboard/HrpDashboard"),
-);
 
 interface RouteConfig {
   path?: any;
@@ -104,6 +95,26 @@ const routes: RouteConfig[] = [
         path: "/auth",
         element: <AuthEmailPage />,
       },
+    ],
+  },
+  {
+    // Auth route component
+    element: (
+      <Suspense fallback={<Loader />}>
+        <AuthGard type="client">
+          <Layout type="DashboardLayout" />
+        </AuthGard>
+      </Suspense>
+    ),
+    errorElement: (
+      <Suspense fallback={<Loader />}>
+        <ErrorPage />
+      </Suspense>
+    ),
+    // child route components
+    children: [
+      { path: "/dashboard", element: <ClientDashboard /> },
+      { path: "/settings", element: <ClientGeneralSettings /> },
     ],
   },
   {
@@ -154,10 +165,6 @@ const routes: RouteConfig[] = [
     ),
     // child route components
     children: [
-      { path: "/dashboard", element: <ClientDashboard /> },
-      { path: "/hrm/dashboard", element: <HrmDashboard /> },
-      { path: "/hrp/dashboard", element: <HrpDashboard /> },
-      { path: "/hm/dashboard", element: <HmDashboard /> },
       { path: "/jobs", element: <JobsList /> },
       { path: "/jobs/edit/:id", element: <EditJob /> },
       {
@@ -208,14 +215,12 @@ const routes: RouteConfig[] = [
     ),
     // child route components
     children: [
-      { path: "/settings", element: <ClientGeneralSettings /> },
       { path: "/settings/users", element: <Admin /> },
       { path: "/settings/billing", element: <Admin /> },
       { path: "/settings/organization", element: <Admin /> },
-        { path: "/settings/question-bank", element: <Admin /> },
-        { path: "/settings/question-bank/:id", element: <QBSingle /> },
-        { path: "/settings/ai-assessment-config", element: <Admin /> },
-
+      { path: "/settings/question-bank", element: <Admin /> },
+      { path: "/settings/question-bank/:id", element: <QBSingle /> },
+      { path: "/settings/ai-assessment-config", element: <Admin /> },
     ],
   },
   {
